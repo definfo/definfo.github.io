@@ -18,21 +18,24 @@
   <meta name="author" content="Sun Yuxuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="Python Package Management现状以 Arch Linux 为例，默认的包管理器 pacman 基本取代了 pip 的生态位，将系统级 Python Package 纳入包管理，core repo 提供的 Python pip &#x2F; setuptools 被设置为可选依赖（不默认安装）。执行 sudo pip install [package]  Arch Linux无">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://definfo.github.io/2024/01/11/hello-world/">
+<meta property="og:title" content="Python 环境总结">
+<meta property="og:url" content="https://definfo.github.io/2024/01/18/python-env/">
 <meta property="og:site_name" content="mount &#x2F;dev&#x2F;dff">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Python Package Management现状以 Arch Linux 为例，默认的包管理器 pacman 基本取代了 pip 的生态位，将系统级 Python Package 纳入包管理，core repo 提供的 Python pip &#x2F; setuptools 被设置为可选依赖（不默认安装）。执行 sudo pip install [package]  Arch Linux无">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-11T06:32:46.272Z">
-<meta property="article:modified_time" content="2024-01-11T06:32:46.272Z">
+<meta property="article:published_time" content="2024-01-18T06:20:21.000Z">
+<meta property="article:modified_time" content="2024-01-18T06:20:21.000Z">
 <meta property="article:author" content="Sun Yuxuan">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="conda">
+<meta property="article:tag" content="venv">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - mount /dev/dff</title>
+  <title>Python 环境总结 - mount /dev/dff</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="Python 环境总结"></span>
           
         </div>
 
@@ -221,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-11 14:32" pubdate>
-          2024-01-11T02:32:46
+        <time datetime="2024-01-18 14:20" pubdate>
+          2024-01-18T02:20:21
         </time>
       </span>
     
@@ -234,7 +237,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          18 字
+          572 字
         
       </span>
     
@@ -246,7 +249,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -283,24 +286,39 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">Python 环境总结</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h3 id="Python-Package-Management"><a href="#Python-Package-Management" class="headerlink" title="Python Package Management"></a>Python Package Management</h3><h4 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h4><p>以 Arch Linux 为例，默认的包管理器 pacman 基本取代了 pip 的生态位，将系统级 Python Package 纳入包管理，core repo 提供的 Python pip &#x2F; setuptools 被设置为可选依赖（不默认安装）。<br>执行 <code>sudo pip install [package]</code> </p>
+<p><strong>Arch Linux</strong><br>无法安装，<code>Error:externally-managed-environment</code>，建议使用 venv &#x2F; pipx 并提示 PEP 668。</p>
+<p><strong>Ubuntu 22.04.3 on WSL2</strong><br>正常安装，<code>Warning:Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager.</code>，建议使用虚拟环境。</p>
+<p><strong>Windows 11 23H2 22635.2915</strong><br>正常安装</p>
+<h4 id="Arch-Linux-禁用-pip-原因"><a href="#Arch-Linux-禁用-pip-原因" class="headerlink" title="Arch Linux 禁用 pip 原因"></a>Arch Linux 禁用 pip 原因</h4><p>滚动发行的特性要求系统由包管理器对所有组件进行统一更新（分析依赖关系，解决冲突，选择软件源，etc.），因此需要尽可能排除其他包管理器的影响。得益于 AUR 的生态建设，常见包都有收录（未收录也可以按照教程构建 PKGBUILD 文件）</p>
+<h4 id="Ex"><a href="#Ex" class="headerlink" title="Ex:"></a>Ex:</h4><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">$ sudo pacman -S python-[package]<br>// Recommended, install <span class="hljs-keyword">in</span> <span class="hljs-keyword">system</span> dir /usr<br>$ sudo pip install [package]<br>// Should never be used (<span class="hljs-keyword">by</span> <span class="hljs-keyword">default</span> banned), will cause <span class="hljs-keyword">conflict</span> <span class="hljs-keyword">with</span> pacman<br></code></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs scss">$ pip install <span class="hljs-attr">--user</span> <span class="hljs-selector-attr">[package]</span><br><span class="hljs-comment">// Optional if want to install user-wide package</span><br><span class="hljs-comment">// Need to deal with dependency</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h4 id="Ref"><a href="#Ref" class="headerlink" title="Ref:"></a>Ref:</h4><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Python#Package_management">Python - ArchWiki</a><br><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Talk:Python#">Talk:Python - ArchWiki</a><br><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/System_maintenance#Be_careful_with_unofficial_packages">System maintenance - ArchWiki</a><br><a target="_blank" rel="noopener" href="https://arch-linux.osrc.com/prepare/understand.html#archlinux-%E7%9A%84%E7%89%B9%E7%82%B9">archlinux 的特点</a></p>
+<h3 id="Python-Virtual-Environment"><a href="#Python-Virtual-Environment" class="headerlink" title="Python Virtual Environment"></a>Python Virtual Environment</h3><blockquote>
+<p>A virtual environment is a directory into which some binaries and shell scripts are installed. The binaries include <em>python</em> for executing scripts and <em>pip</em> for installing other modules within the environment. There are also shell scripts (one for <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Bash">bash</a>, csh, and <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fish">fish</a>) to activate the environment. Essentially, a virtual environment mimics a full system install of <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Python">Python</a> and all of the desired modules without interfering with any system on which the application might run.</p>
+</blockquote>
+<h4 id="省流："><a href="#省流：" class="headerlink" title="省流："></a>省流：</h4><p>包含 Python 可执行文件，包管理器，以及（控制环境激活状态的）脚本的<strong>隔离工作目录</strong>，不干扰系统状态 (某种意义上的无状态？)</p>
+<h4 id="venv-virtualenv"><a href="#venv-virtualenv" class="headerlink" title="venv &#x2F; virtualenv"></a>venv &#x2F; virtualenv</h4><p>轻量化，提供基础的 Python 3 虚拟环境</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-comment">// Create using venv (integrated in Python 3.3+)</span><br><span class="hljs-symbol">$</span> python -m venv [envname]<br><br><span class="hljs-comment">// Create using virtualenv (available in python-virtualenv)</span><br><span class="hljs-symbol">$</span> virtualenv [envname]<br><br><span class="hljs-comment">// Activate</span><br><span class="hljs-symbol">$</span> source [envname]/bin/activate<br><br><span class="hljs-comment">// Install a package</span><br>(same as pip)<br><br><span class="hljs-comment">// Deactivate</span><br>(envname) <span class="hljs-symbol">$</span> deactivate<br><br><span class="hljs-comment">// Delete</span><br><span class="hljs-symbol">$</span> sudo rm -r [envname]<br></code></pre></td></tr></table></figure>
+<p>实质上是对文件系统的管理（使用 &#x2F;[envname] 目录作为虚拟环境根目录）</p>
+<h4 id="conda-文档"><a href="#conda-文档" class="headerlink" title="conda 文档"></a>conda <a target="_blank" rel="noopener" href="https://docs.conda.io/en/latest/">文档</a></h4><p>常见于<del>Jupyter Notebook</del>炼丹、科学计算等领域，默认使用 conda 处理内部依赖<del>然而求解能力好像还不如 pip</del></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-comment">// Create env (Install miniconda/anaconda first)</span><br>$ conda create <span class="hljs-attr">--name</span> <span class="hljs-selector-attr">[envname]</span> <span class="hljs-selector-attr">[package(=version)]</span><br><br><span class="hljs-comment">// Activate</span><br>$ conda activate <span class="hljs-selector-attr">[envname]</span><br><br><span class="hljs-comment">// Install a package</span><br>$ conda install <span class="hljs-selector-attr">[package(=version)]</span><br><br><span class="hljs-comment">// Deactivate</span><br>(envname) $ conda deactivate<br><br><span class="hljs-comment">// Delete</span><br>$ conda remove -n <span class="hljs-selector-attr">[envname]</span> <span class="hljs-attr">--all</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<h4 id="pipx-文档"><a href="#pipx-文档" class="headerlink" title="pipx 文档"></a>pipx <a target="_blank" rel="noopener" href="https://github.com/pypa/pipx">文档</a></h4><p>类似于系统包管理器，将 Python Package 作为独立应用程序管理（包括 Shell 支持等），因此适合管理基于 Python 的用户端应用程序。</p>
+<blockquote>
+<p><strong>In a way, it turns Python Package Index (PyPI) into a big app store for Python applications.</strong></p>
+</blockquote>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-comment">// Install a package (from PyPI or source control)</span><br>$ pipx install [package]<br>$ pipx install git+<span class="hljs-link">https://link/to/git/repo/</span>[<span class="hljs-string">package</span>].git@[branch/git hash]<br>$ pipx install https://link/to/archive/release.zip<br><br><span class="hljs-comment">// Inject a package (Add additional packages to an existing application installe)</span><br>$ pipx inject [app] [package]<br><br><span class="hljs-comment">// Run an app in a temporary virtual environment</span><br>$ pipx run [app] [args...]<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h4 id="poetry-pipenv-文档"><a href="#poetry-pipenv-文档" class="headerlink" title="poetry &#x2F; pipenv 文档"></a>poetry <del>&#x2F; pipenv</del> <a target="_blank" rel="noopener" href="https://python-poetry.org/docs/">文档</a></h4><p>目前 poetry 已经全面取代了 pipenv (<a target="_blank" rel="noopener" href="https://johnfraney.ca/blog/pipenv-poetry-benchmarks-ergonomics/">Benchmark</a>)<br>需要注意的是，poetry 是一个<strong>依赖管理&amp;打包工具</strong>，必须安装在现有的隔离环境下，常与 pipx 配合使用方便开发 Python 应用 (Continuous Integration)</p>
+<h4 id="docker-python"><a href="#docker-python" class="headerlink" title="docker-python"></a>docker-python</h4><p><del>都用 docker 了，不会自己写 docker-cli &#x2F; docker-compose？</del></p>
+<h4 id="Ref-1"><a href="#Ref-1" class="headerlink" title="Ref:"></a>Ref:</h4><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Python/Virtual_environment">Python&#x2F;Virtual environment - Archwiki</a></p>
 
                 
               </div>
@@ -309,6 +327,38 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CS/" class="category-chain-item">CS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/python/" class="print-no-link">#python</a>
+      
+        <a href="/tags/conda/" class="print-no-link">#conda</a>
+      
+        <a href="/tags/venv/" class="print-no-link">#venv</a>
+      
+    </div>
   
 </div>
 
@@ -318,8 +368,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>https://definfo.github.io/2024/01/11/hello-world/</div>
+      <div>Python 环境总结</div>
+      <div>https://definfo.github.io/2024/01/18/python-env/</div>
     </div>
     <div class="license-meta">
       
@@ -331,7 +381,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024-01-11</div>
+          <div>2024-01-18</div>
         </div>
       
       
@@ -363,15 +413,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/18/python-env/" title="Python 环境总结">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python 环境总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2024/01/11/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
