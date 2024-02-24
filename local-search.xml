@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Personal Arch Linux Setup</title>
+    <link href="/2024/02/25/personal-arch-linux-setup/"/>
+    <url>/2024/02/25/personal-arch-linux-setup/</url>
+    
+    <content type="html"><![CDATA[<p>本文主要介绍桌面环境 (DE) 以及 Windows 应用替代方案，以及一些使用注意事项</p><p>pacman 常用命令（待更新</p><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>sudo pacman<br><span class="hljs-variable">$ </span>yay<br><span class="hljs-variable">$ </span>sudo pacman -Ss <br><span class="hljs-variable">$ </span>sudo pacman -Rs<br><span class="hljs-variable">$ </span>sudo pacman -Syyu<br></code></pre></td></tr></table></figure><p>目前显示管理-桌面环境方案：SDDM + KDE Plasma，准备切换至：Hyprland  &#x2F; SDDM + Hyprland &amp; KDE Plasma</p><p>Electron 框架在 Wayland 下支持 text-input-v2，应用追加启动参数 <code>--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime</code> 以启用输入法支持</p><p>Input Method(multi-lang): <strong>extra&#x2F;fcitx5</strong> <code>Next generation of fcitx</code></p><p>输入法键盘配置 - English(US) + 拼音[extra&#x2F;fcitx5-chinese-addons] + <strong>French(Canada)</strong> + Mozc[extra&#x2F;fcitx5-mozc]</p><p>QQ: <strong>aur&#x2F;linuxqq-nt-bwrap</strong>  <code>New Linux QQ based on Electron, with bubblewrap sandbox and some tweaks </code></p><p>&#x3D;&#x3D;&gt; NOTE: 要传递给 electron 的自定义参数应该写在: ~&#x2F;.config&#x2F;qq-electron-flags.conf<br>&#x3D;&#x3D;&gt; NOTE: 如果要在 QQ 中下载文件，请先在「设置」-&gt;「存储管理」中把下载文件夹更改为系统的“下载”&#x2F;“Downloads”文件夹。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python 环境总结</title>
     <link href="/2024/01/18/python-env/"/>
     <url>/2024/01/18/python-env/</url>
@@ -20,7 +39,7 @@
     
     <tags>
       
-      <tag>python</tag>
+      <tag>Python</tag>
       
       <tag>conda</tag>
       

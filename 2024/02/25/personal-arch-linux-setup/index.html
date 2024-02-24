@@ -18,21 +18,22 @@
   <meta name="author" content="Sun Yuxuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Undergraduate @ SJTU-SPEIT-22 Arch Linux user (newbee) Have basic knowledge about Network &#x2F; Python &#x2F; OOP &#x2F; Linux. Interested in Software Testing &amp; Verification &#x2F; Operating Syst">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://definfo.github.io/about/">
+    <meta name="description" content="本文主要介绍桌面环境 (DE) 以及 Windows 应用替代方案，以及一些使用注意事项 pacman 常用命令（待更新 12345$ sudo pacman$ yay$ sudo pacman -Ss $ sudo pacman -Rs$ sudo pacman -Syyu  目前显示管理-桌面环境方案：SDDM + KDE Plasma，准备切换至：Hyprland  &#x2F; SDDM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Personal Arch Linux Setup">
+<meta property="og:url" content="https://definfo.github.io/2024/02/25/personal-arch-linux-setup/">
 <meta property="og:site_name" content="mount &#x2F;dev&#x2F;dff">
-<meta property="og:description" content="Undergraduate @ SJTU-SPEIT-22 Arch Linux user (newbee) Have basic knowledge about Network &#x2F; Python &#x2F; OOP &#x2F; Linux. Interested in Software Testing &amp; Verification &#x2F; Operating Syst">
+<meta property="og:description" content="本文主要介绍桌面环境 (DE) 以及 Windows 应用替代方案，以及一些使用注意事项 pacman 常用命令（待更新 12345$ sudo pacman$ yay$ sudo pacman -Ss $ sudo pacman -Rs$ sudo pacman -Syyu  目前显示管理-桌面环境方案：SDDM + KDE Plasma，准备切换至：Hyprland  &#x2F; SDDM">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-16T04:04:43.000Z">
-<meta property="article:modified_time" content="2024-01-16T04:04:43.000Z">
+<meta property="article:published_time" content="2024-02-24T18:29:08.000Z">
+<meta property="article:modified_time" content="2024-02-24T18:29:08.000Z">
 <meta property="article:author" content="Sun Yuxuan">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>关于 - mount /dev/dff</title>
+  <title>Personal Arch Linux Setup - mount /dev/dff</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -121,7 +122,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -239,9 +240,51 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text="Personal Arch Linux Setup"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-25 02:29" pubdate>
+          2024-02-25T02:29:08
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          210 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          2 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -257,56 +300,188 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="https://shuiyuan.sjtu.edu.cn/user_avatar/shuiyuan.sjtu.edu.cn/definfo/288/219543_2.png" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">Sun Yuxuan</div>
-    <div class="about-intro">这个人很懒，什么也没有说～</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com/definfo class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Personal Arch Linux Setup</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本文主要介绍桌面环境 (DE) 以及 Windows 应用替代方案，以及一些使用注意事项</p>
+<p>pacman 常用命令（待更新</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>sudo pacman<br><span class="hljs-variable">$ </span>yay<br><span class="hljs-variable">$ </span>sudo pacman -Ss <br><span class="hljs-variable">$ </span>sudo pacman -Rs<br><span class="hljs-variable">$ </span>sudo pacman -Syyu<br></code></pre></td></tr></table></figure>
+
+<p>目前显示管理-桌面环境方案：SDDM + KDE Plasma，准备切换至：Hyprland  &#x2F; SDDM + Hyprland &amp; KDE Plasma</p>
+<p>Electron 框架在 Wayland 下支持 text-input-v2，应用追加启动参数 <code>--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime</code> 以启用输入法支持</p>
+<p>Input Method(multi-lang): <strong>extra&#x2F;fcitx5</strong> <code>Next generation of fcitx</code></p>
+<p>输入法键盘配置 - English(US) + 拼音[extra&#x2F;fcitx5-chinese-addons] + <strong>French(Canada)</strong> + Mozc[extra&#x2F;fcitx5-mozc]</p>
+<p>QQ: <strong>aur&#x2F;linuxqq-nt-bwrap</strong>  <code>New Linux QQ based on Electron, with bubblewrap sandbox and some tweaks </code></p>
+<p>&#x3D;&#x3D;&gt; NOTE: 要传递给 electron 的自定义参数应该写在: ~&#x2F;.config&#x2F;qq-electron-flags.conf<br>&#x3D;&#x3D;&gt; NOTE: 如果要在 QQ 中下载文件，请先在「设置」-&gt;「存储管理」中把下载文件夹更改为系统的“下载”&#x2F;“Downloads”文件夹。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Personal Arch Linux Setup</div>
+      <div>https://definfo.github.io/2024/02/25/personal-arch-linux-setup/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Sun Yuxuan</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024-02-25</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/01/18/python-env/" title="Python 环境总结">
+                        <span class="hidden-mobile">Python 环境总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"definfo/definfo.github.io","repo-id":"R_kgDOLDdnvQ","category":"Announcements","category-id":"DIC_kwDOLDdnvc4CcdAw","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN","loading":"lazy"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    <p>Undergraduate @ SJTU-SPEIT-22</p>
-<p>Arch Linux user (newbee)</p>
-<p>Have basic knowledge about Network &#x2F; Python &#x2F; OOP &#x2F; Linux. Interested in Software Testing &amp; Verification &#x2F; Operating System &#x2F; Modern PL.</p>
-<p>Currently learning Berkeley CS61A, planning to learn Berkeley CS61B &#x2F; CS61C, CMU 15-213.</p>
-<p>Looking forward to collaborate on software verification workflow.</p>
-<p>Working languages: Chinese (Mandarin), English, French (mal)</p>
-<p>Feel free to contact me via <a href="mailto:&#x68;&#106;&#x73;&#x64;&#x62;&#x62;&#x31;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#x68;&#106;&#x73;&#x64;&#x62;&#x62;&#x31;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;</a></p>
-
-  </div>
-
-  
-</article>
-
 
 
 
@@ -333,11 +508,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -455,6 +627,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
